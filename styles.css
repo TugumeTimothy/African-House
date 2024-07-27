@@ -1,0 +1,46 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+li img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+li h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+li p {
+    margin: 5px 0;
+}

@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">The African House</a>
+        </div>
+        <button class="navbar-toggle" id="navbar-toggle">
+            &#9776; <!-- Hamburger icon -->
+        </button>
+        <ul class="navbar-nav" id="navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="product_upload.html">Product Upload</a></li>
+            <li><a href="...">Editor's Pick</a></li>
+        </ul>
+        <div class="navbar-login">
+            <a href="login.html">Account Login</a>
+        </div>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button type="button">Search</button>
+    </div>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="log-in-form" method="post" action="api/users/login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" name="password" required>
+            <br><br>
+            <button type="submit">Login</button>
+            
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

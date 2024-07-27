@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Upload Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">The African House</a>
+        </div>
+        <button class="navbar-toggle" id="navbar-toggle">
+            &#9776; <!-- Hamburger icon -->
+        </button>
+        <ul class="navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="product_upload.html">Product Upload</a></li>
+            <li><a href="...">Editor's Pick</a></li>
+        </ul>
+        <div class="navbar-login">
+            <a href="signup.html">Account Login</a>
+        </div>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button type="button">Search</button>
+    </div>
+    <div class="container">
+        <h1>The African House Product Upload</h1>
+        <form id="product-form" action="/http://localhost:5000/api/products">
+            <input type="text" id="name" placeholder="Product Name" required>
+            <input type="text" id="description" placeholder="Product Description" required>
+            <input type="number" id="price" placeholder="Product Price" required>
+            <input type="file" id="image" required>
+            <button type="submit">Add Product</button>
+        </form>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
