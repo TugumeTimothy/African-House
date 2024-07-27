@@ -37,7 +37,9 @@ router.post('/login', async (req, res) => {
       const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
         expiresIn: '1h',
       });
-      res.json({ token });
+      //res.json({ token });
+      res.status(200).json({token});
+      //console.log("Login status Code "+res.statusCode)
     } catch (jwtError) {
       console.error(jwtError);
       res.status(500).json({ message: 'Error generating token' });
