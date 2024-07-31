@@ -39,32 +39,36 @@ const productList = document.getElementById('product-list');
     });
     }
     // Fetch and display products
-    fetch('api/products')
-        .then(response => response.json())
-        .then(products => {
-            console.log(products)
-            if (products.length === 0) {
-                productList.innerHTML = '<li>No products found</li>';
-            } else {
-                products.forEach(product => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <img src="${product.imageUrl}" alt="${product.name}">
-                        <div>
-                            <h2>${product.name}</h2>
-                            <p>${product.description}</p>
-                            <p>$${product.price}</p>
-                        </div>
-                    `;
-                    productList.appendChild(li);
-                });
-            }
-        })
-        .catch(error => {
-            alert('Error fetching the products')
-            console.error('Error fetching products:', error);
-            productList.innerHTML = '<li>Error fetching products</li>';
-        });
+    // Fetch and display products
+    fetch('/api/products')
+    .then(response => response.json())
+    .then(products => {
+    console.log(products)
+    if (products.length === 0) {
+        const noProductsHtml = '<li>No products found</li>';
+        document.getElementById('product-list').innerHTML = noProductsHtml;
+    } else {
+        const productListHtml = products.map(product => {
+        return `
+        <li>
+          <img src="${product.imageUrl}" alt="${product.name}">
+          <div>
+            <h2>${product.name}</h2>
+            <p>${product.description}</p>
+            <p>$${product.price}</p>
+            <p>hahahaaa</p>
+          </div>
+        </li>
+      `;
+    }).join('');
+    document.getElementById('product-list').innerHTML = productListHtml;
+    }
+    })
+  .catch(error => {
+  alert('Error fetching the products')
+  console.error('Error fetching products:', error);
+  document.getElementById('product-list').innerHTML = '<li>Error fetching products</li>';
+   });
         
     
 });

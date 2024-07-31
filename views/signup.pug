@@ -1,0 +1,81 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title Sign Up
+    link(
+      href="styles.css" 
+      rel="stylesheet"
+      )
+  body
+    nav.navbar
+      .navbar-brand
+        a(href="home") The African House
+      button#navbar-toggle.navbar-toggle
+        span &#9776;
+        // Hamburger icon
+      ul#navbar-nav.navbar-nav
+        li
+          a(href="home") Home
+        li
+          a(href="best-sellers.html") Best Sellers
+        li
+          a(href="categories.html") Categories
+        li
+          a(href="product_upload") Product Upload
+        li
+          a(href="...") Editor's Pick
+      .navbar-login
+        a(href="login") Account Login
+    .search-bar
+      input(
+        placeholder="Search for products..." 
+        type="text"
+        )
+      button(type="button") Search
+    .container
+      h1 Sign Up
+      form#sign-up-form(
+        method="post" 
+        action="api/users/signup"
+        )
+        label(for="username") Username:
+        input#username(
+          required="" 
+          placeholder="Enter username" 
+          type="text"
+          )
+        br
+        br
+        label(for="email") Email:
+        input#email(
+          required="" 
+          placeholder="Enter email" 
+          type="email"
+          )
+        br
+        br
+        label(for="password") Password:
+        input#password(
+          required="" 
+          placeholder="Enter password" 
+          type="password"
+          )
+        br
+        br
+        label(for="confirm-password") Confirm Password:
+        input#confirm-password(
+          required="" 
+          placeholder="Confirm password" 
+          type="password"
+          )
+        br
+        br
+        button(type="submit") Sign Up
+    script(
+      defer="" 
+      src="./app.js"
+      )

@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if(response.status===200){
           console.log("Successful Login")
           alert("Successful Login")
-          window.location.href = './index.html'
+          window.location.href = '/home'
+          //response.render('home')
         }
       }catch(error){
         console.error('Error logging In',error)

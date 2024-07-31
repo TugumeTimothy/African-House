@@ -3,8 +3,51 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    
 }
+/* styles.css */
 
+/* Make the product list a grid container */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, equal width */
+    grid-gap: 20px; /* gap between grid cells */
+    padding: 20px;
+  }
+  
+  /* Style each product item */
+  #product-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the product image */
+  #product-list li img {
+    width: 100%; /* make the image full width */
+    height: 200px; /* set a fixed height */
+    object-fit: cover; /* make the image cover the container */
+    border-radius: 10px 10px 0 0; /* rounded corners on top */
+  }
+  
+  /* Add some basic typography styles */
+  #product-list li h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #product-list li p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -89,13 +132,14 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 1200px; /* set a max width */
+    margin: 40px auto; /* center the container */
     padding: 20px;
-    background-color: #fff;
+    background-color: #f9f9f9; /* light gray background */
+    border: 1px solid #ddd;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+  }
 /* Form Styles */
 
 #sign-up-form {

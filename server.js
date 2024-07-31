@@ -12,8 +12,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const prodRouter=require('./routes/productRoutes')
 const userRouter=require('./routes/userRoutes')
+const pug=require('pug')
+//const Product = require('./Models/productModel');
+
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'))
 //const apiRouter =express.Router();
 // Middleware
+//app.use(express.static('public', { mime: true }));
 app.use(cors());
 app.use(cors({
   origin: ['http://localhost:5000'], // replace with the URL of your client application
@@ -25,9 +32,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //app.use(express.static(path.join(__dirname, 'uploads')));
-
+//app.use(express.static('public'));
 
 app.use('/uploads',express.static('uploads'))
+
 mongoose.connect('mongodb://localhost:27017/african_art_marketplace')
 .then(() => {
   console.log('Connected to MongoDB');
@@ -47,10 +55,25 @@ console.log('SECRET_KEY:', process.env.SECRET_KEY);
 console.log('posted')
 })
 
-// Serve the HTML file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+
+// Starting Point
+app.get('/home', async (req, res) => {
+  //const products = await Product.find();
+ res.render('home')
 });
+app.get('/signup', async (req, res) => {
+  //const products = await Product.find();
+ res.render('signup')
+});
+app.get('/login', async (req, res) => {
+  //const products = await Product.find();
+ res.render('login')
+});
+app.get('/product_upload', async (req, res) => {
+  //const products = await Product.find();
+ res.render('product_upload')
+});
+
 app.get('/uploadfile', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'product_upload.html'));
 });

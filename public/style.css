@@ -191,6 +191,10 @@ body {
       width: 100%;
       display: none; /* Hide by default */
     }
+    
+    .navbar-nav.active {
+      display: flex; /* Show when active */
+    }
   
     .navbar-nav li {
       display: block;

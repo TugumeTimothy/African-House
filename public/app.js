@@ -1,5 +1,5 @@
 console.log('JavaScript code is running');
-//const signupForm = document.getElementById('sign-up-form');
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const navbarToggle = document.getElementById('navbar-toggle');
@@ -9,6 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
     navbarToggle.addEventListener('click', function() {
         navbarNav.classList.toggle('active');
     });    
+    //const signupForm = document.getElementById('sign-up-form');
+    console.log('about to log')
+    /*
+  if(typeof Handlebars==="undefined"){
+    const signUpTemplate = Handlebars.compile(document.getElementById('sign-up-template').innerHTML);
+    const signUpHtml = signUpTemplate();
+    document.getElementById('sign-up-container').innerHTML = signUpHtml;
+  }else{
+    console.error('Handlebars is not defined')
+  }
+  */
+
+  console.log('Signup form element:', signupForm);
 //});
 //document.addEventListener('DOMContentLoaded', function() {
 
@@ -37,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
           body: JSON.stringify({ username, email, password }),
         })
         if (response.status === 201) {
-          window.location.href = './index.html'
+          window.location.href = '/home'
         }
         const user = await response.json()
         console.log('User created:', user)
