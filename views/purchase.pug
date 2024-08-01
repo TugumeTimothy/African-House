@@ -1,0 +1,15 @@
+h1= product.name
+p= product.description
+p= product.price
+
+form(action=`/pay/${product._id}` method="post")
+  label Amount:
+  input(type="number" name="amount" required)
+  br
+  label Phone Number:
+  input(type="tel" name="phoneNumber" required)
+  br
+  label Reference:
+  input(type="text" name="reference" required)
+  br
+  button(type="submit") Pay Now

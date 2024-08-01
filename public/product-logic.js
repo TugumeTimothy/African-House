@@ -26,6 +26,7 @@ const productList = document.getElementById('product-list');
                     <h2>${product.name}</h2>
                     <p>${product.description}</p>
                     <p>$${product.price}</p>
+                    <button class="purchase-btn" data-product-id="${product.id}">Purchase</button>
                 </div>
             `;
             alert('Product uploaded successfully')
@@ -51,12 +52,12 @@ const productList = document.getElementById('product-list');
         const productListHtml = products.map(product => {
         return `
         <li>
-          <img src="${product.imageUrl}" alt="${product.name}">
+          <img src="${product.imageUrl}" alt="${product.name}" data-id="${product._id}">
           <div>
             <h2>${product.name}</h2>
             <p>${product.description}</p>
             <p>$${product.price}</p>
-            <p>hahahaaa</p>
+            <button class="purchase-btn" data-product-id="${product._id}">Purchase</button>
           </div>
         </li>
       `;
@@ -69,6 +70,12 @@ const productList = document.getElementById('product-list');
   console.error('Error fetching products:', error);
   document.getElementById('product-list').innerHTML = '<li>Error fetching products</li>';
    });
-        
+  // Add event listener to purchase buttons
+  document.getElementById('product-list').addEventListener('click', (event) => {
+    if (event.target.classList.contains('purchase-btn')) {
+      const id = event.target.getAttribute('data-product-id');
+      window.location.href = `/purchase/${id}`;
+    }
+  });
     
 });

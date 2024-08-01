@@ -12,7 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const prodRouter=require('./routes/productRoutes')
 const userRouter=require('./routes/userRoutes')
+const purchaseRouter=require('./routes/purchaseRoutes')
 const pug=require('pug')
+const airtelMM=require('./airtelMobileMoney')
 //const Product = require('./Models/productModel');
 
 
@@ -47,7 +49,7 @@ mongoose.connect('mongodb://localhost:27017/african_art_marketplace')
 // Use the routes
 app.use('/api/products', prodRouter);
 app.use('/api/users', userRouter);
-
+app.use('/purchase',purchaseRouter)
 //Basic route for tests
 app.get('/rt',(req,res)=>{
   
